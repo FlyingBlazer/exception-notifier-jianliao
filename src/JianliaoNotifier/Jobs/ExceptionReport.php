@@ -3,12 +3,13 @@
 namespace JianliaoNotifier\Jobs;
 
 use Exception;
+use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ExceptionReport extends Job implements ShouldQueue
+class ExceptionReport implements ShouldQueue
 {
-    use InteractsWithQueue;
+    use Queueable, InteractsWithQueue;
 
     protected $message;
     protected $code;
